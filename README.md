@@ -2,7 +2,7 @@
 # Proiect TSC
 
 ## Diagrama Bloc
-![Diagram](Images/diagrama.png)
+![Diagrama](Images/diagrama.PNG)
 
 ## Bill Of Materials
 | Name | Link Component | Link Datasheet |
