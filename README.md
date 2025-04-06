@@ -1,8 +1,8 @@
-###Croitoru Constantin-Bogdan
-#Proiect TSC
+### Croitoru Constantin-Bogdan
+# Proiect TSC
 
-##Diagrama Bloc
-![Diagrama](Images/diagrama.png)
+## Diagrama Bloc
+![Diagram](Images/diagrama.png)
 
 ## Bill Of Materials
 | Name | Link Component | Link Datasheet |
