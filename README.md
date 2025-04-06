@@ -1,11 +1,11 @@
-### Croitoru Constantin-Bogdan
+### Croitoru Constantin-Bogdan 334CA
 # Proiect TSC
 
 ## Diagrama Bloc
 ![Diagrama](Images/diagrama.PNG)
 
 ## Bill Of Materials
-| Name | Link Component | Link Datasheet |
+| Nume | Link componenta | Link Datasheet |
 |----------------|----------------|----------------|		
 |	BOOT_BUTTON	|	https://www.snapeda.com/parts/EVQP7L01P/Panasonic/view-part/?welcome=home&ref=search&t=evqp7l01p	|	https://industry.panasonic.com/global/en/downloads?tab=catalog&small_g_cd=203&part_no=EVQPUJ02K	|
 |	C1	|	https://componentsearchengine.com/part-view/CC0402MRX5R5BB106/YAGEO	|	https://componentsearchengine.com/Datasheets/2/CC0402MRX5R5BB106.pdf	|
@@ -114,29 +114,29 @@
 
 
 ## Descriere functionalitate
-Dispozitivul este construit în jurul microcontrolerului ESP32-C6, care servește ca unitate centrală de procesare și interacționează cu diverse componente esențiale pentru funcționarea sa.
+Dispozitivul este construit in jurul microcontrolerului ESP32-C6, care serveste ca unitate centrala de procesare si interactioneaza cu diverse componente esentiale pentru funcționarea sa.
 
-Pentru a asigura o urmărire precisă a timpului, chiar și în absența alimentării, dispozitivul include un modul RTC DS3231SN, care comunică cu ESP32-C6 prin interfața I2C, garantând sincronizarea corectă a datelor și evenimentelor.
+Pentru a asigura o urmarire precisa a timpului, dispozitivul include un modul RTC DS3231SN, care comunica cu ESP32-C6 prin interfata I2C, garantand sincronizarea corecta a datelor si evenimentelor.
 
-Senzorul de mediu BME680 este responsabil pentru colectarea informațiilor despre mediul înconjurător.. Acesta transmite datele către microcontroler prin I2C, oferind informații esențiale pentru monitorizarea mediului.
+Senzorul de mediu BME680 este responsabil pentru colectarea informatiilor despre mediul înconjurator. Acesta transmite datele catre microcontroler prin I2C.
 
-Dispozitivul beneficiază și de un slot pentru card SD, utilizat pentru stocarea datelor colectate sau a altor informații relevante. Acesta comunică cu ESP32-C6 prin interfața SPI, asigurând o stocare externă eficientă. De asemenea, există o memorie Flash NOR externă de 64MB (W25Q512JVIQ) pentru stocarea firmware-ului și a altor date persistente.
+Dispozitivul beneficiaza si de un slot pentru card SD, utilizat pentru stocarea datelor colectate sau a altor informatii relevante. Acesta comunica cu ESP32-C6 prin interfata SPI, asigurand o stocare externa eficienta. De asemenea, exista o memorie Flash NOR externa de 64MB (W25Q512JVIQ) pentru stocarea firmware-ului si a altor date persistente.
 
-Afișarea datelor și a altor informații vizuale se realizează printr-un display E-Paper, care este conectat la ESP32-C6 prin pini GPIO dedicați.
+Afisarea datelor si a altor informatii vizuale se realizeaza printr-un display E-Paper, care este conectat la ESP32-C6 prin pini GPIO dedicati.
 
-În ceea ce privește alimentarea, dispozitivul utilizează un conector USB-C (SAMACSYS_PARTS_USB4110-GF-A) cu protecție ESD, iar încărcarea bateriei Li-Po este gestionată de un controller de încărcare MCP73831. Un stabilizator de tensiune LDO (XC6220A331MR-G) asigură o alimentare stabilă, iar nivelul de încărcare al bateriei este monitorizat cu ajutorul unui circuit MAX17048G+T.
+In ceea ce priveste alimentarea, dispozitivul utilizeaza un conector USB-C (SAMACSYS_PARTS_USB4110-GF-A) cu protectie ESD, iar incarcarea bateriei Li-Po este gestionata de un controller de incarcare MCP73831. Un stabilizator de tensiune LDO (XC6220A331MR-G) asigura o alimentare stabila, iar nivelul de incarcare al bateriei este monitorizat cu ajutorul unui circuit MAX17048G+T.
 
-Comunicarea între componentele dispozitivului se face eficient datorită unui conector Qwiic (QWIIC_CONNECTORJS-1MM), care facilitează conectarea rapidă a dispozitivelor I2C între ele.
+Comunicarea intre componentele dispozitivului se face eficient datorita unui conector Qwiic (QWIIC_CONNECTORJS-1MM), care faciliteaza conectarea rapida a dispozitivelor I2C între ele.
 
-În total, dispozitivul este un sistem complet și portabil, alimentat de o baterie Li-Po, cu conectivitate USB-C, care integrează un microcontroler ESP32-C6, senzori pentru monitorizarea mediului, un RTC pentru urmărirea timpului și o soluție de stocare extinsă, toate interconectate prin interfețele I2C și SPI.
+In total, dispozitivul este un sistem complet si portabil, alimentat de o baterie Li-Po, cu conectivitate USB-C, care integreaza un microcontroler ESP32-C6, senzori pentru monitorizarea mediului, un RTC pentru urmarirea timpului si o solutie de stocare extinsa, toate interconectate prin interfetele I2C si SPI.
 
 
 
 ## Pini folositi
-Modulul DS3231SN RTC și senzorul BME688: Ambii folosesc pinii GPIO19 (SDA) și GPIO20 (SCL) pentru comunicarea I2C, un protocol serial pentru transferul de date.
-Cardul SD: Comunică prin SPI, folosind pinii GPIO7 (MOSI), GPIO27 (MISO), GPIO4 (SS_SD) și GPIO6 (SCK) pentru transferul de date și sincronizare.
-Display-ul E-Paper: Utilizează pini specifici pentru control: GPIO18 (EPD_3V3_C), GPIO11 (EPD_CS), GPIO5 (EPD_DC), GPIO21 (EPD_RST) și GPIO26 (EPD_BUSY).
-Butoane: Pinii GPIO3 (RESET), GPIO15 (IO/BOOT) și GPIO23 (IO/CHANGE) sunt folosiți pentru detectarea acțiunilor utilizatorului, cum ar fi resetarea sau intrarea în modul de boot.
+Modulul DS3231SN RTC si senzorul BME688: ambii folosesc pinii GPIO19 (SDA) si GPIO20 (SCL) pentru comunicarea I2C, un protocol serial pentru transferul de date.
+Cardul SD: Comunica prin SPI, folosind pinii GPIO7 (MOSI), GPIO27 (MISO), GPIO4 (SS_SD) si GPIO6 (SCK) pentru transferul de date si sincronizare.
+Display-ul E-Paper: Utilizeaza pini specifici pentru control: GPIO18 (EPD_3V3_C), GPIO11 (EPD_CS), GPIO5 (EPD_DC), GPIO21 (EPD_RST) si GPIO26 (EPD_BUSY).
+Butoane: Pinii GPIO3 (RESET), GPIO15 (IO/BOOT) si GPIO23 (IO/CHANGE) sunt folositi pentru detectarea actiunilor utilizatorului, cum ar fi resetarea sau intrarea in modul de boot.
 
 
 
@@ -145,7 +145,7 @@ Am dat approve warning-urilor de tip Power de la schema electrica.
 Am dat approve warningului "Pin A2 connected to VBUS".
 
 ## Rezolvare Errors
-Am dat approve erorile de la componenta J2.
+Am dat approve erorilor de la componenta J2.
 Am rezolvat erorile de la Bobina L1 prin modificarea pad-urilor .
 Am rezolvat erorile de la componenta U4.
 
